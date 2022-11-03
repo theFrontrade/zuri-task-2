@@ -155,10 +155,16 @@ body {
    padding: 5% 23.5%;
  }
  .contact-span{
-   font-size: 19px;
+   font-size: 17px;
    font-weight: 200;
    color: #475467;
-   line-height: 50px;
+   line-height: 10px;
+ }
+ .contact-agree-span{
+  font-size: 17px;
+  font-weight: 200;
+  color: #475467;
+  line-height: 5px;
  }
  .contact-form{
    width: 100%;
@@ -177,7 +183,7 @@ body {
    color: #344054;
   font-weight: 500;
   font-size: 14px;
-  line-height: 20px;
+  line-height: 40px;
  }
  .contact-name-input{
    width: 95%;
@@ -190,6 +196,7 @@ body {
    outline: none;
    font-size: 1rem;
  }
+
   .contact-name-input-message{
    width: 97%;
    height: 100px;
@@ -220,6 +227,24 @@ body {
    margin: 20px 0;
    font-family: 'Inter', sans-serif;
  }
+ .contact-err-message{
+   color:#F83F23;
+   font-size: .9rem;
+ }
  .send-message-button:hover{
    opacity: .6;
  }
+ @media only screen and (max-width:750px) {
+   .contact-wrap{
+     width: 90%;
+     padding: 0 5%;
+   }
+ }
+ @media only screen and (max-width:650px) {
+  .contact-name-wrap{
+    flex-direction: column;
+  }
+  .contact-name-sub-wrap{
+    width: 100%;
+  }
+}

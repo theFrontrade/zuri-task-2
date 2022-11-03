@@ -2,32 +2,46 @@ import React, { useState } from "react";
 import Footer from "./Footer";
 
 const Contacts = () => {
+  const [submitted, setSubmitted] = useState(false);
+  const [validated, setValidated] = useState();
   const [contactForm, setContactForm] = useState({
     firstName: "",
     lastName: "",
     email: "",
     message: "",
+    agreeCheck: false,
   });
-  const handleContactFirstName = (e) => {
-    e.preventDefault();
-    setContactForm({ ...contactForm, firstName: e.target.value });
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setContactForm((prevValue) => {
+      return {
+        ...prevValue,
+        [name]: value,
+      };
+    });
   };
-  const handleContactLastName = (e) => {
-    e.preventDefault();
-    setContactForm({ ...contactForm, lastName: e.target.value });
-  };
-  const handleContactEmail = (e) => {
-    e.preventDefault();
-    setContactForm({ ...contactForm, email: e.target.value });
-  };
-  const handleContactMessage = (e) => {
-    e.preventDefault();
-    setContactForm({ ...contactForm, message: e.target.value });
+  const handleAgreeCheck = (e) => {
+    setContactForm({ ...contactForm, agreeCheck: e.target.checked });
   };
   const handleContactSendMessage = (e) => {
     e.preventDefault();
-    console.log(contactForm);
+    setSubmitted(true);
+    if (
+      submitted &&
+      contactForm.firstName &&
+      contactForm.lastName &&
+      contactForm.email &&
+      contactForm.email.includes("@") &&
+      contactForm.message &&
+      contactForm.agreeCheck
+    ) {
+      setValidated(true)
+      alert('Message Sent')
+    }
   };
+  if(validated){
+    window.location.reload()
+  }
   const fullName = "Samuel Adeniyi";
   return (
     <div>
@@ -36,59 +50,95 @@ const Contacts = () => {
         <span className='contact-span'>
           Hi there, contact me to ask me about anything you have in mind.
         </span>
-        <form className='contact-form'>
+        <form className='contact-form' method="post">
           <div className='contact-name-wrap'>
             <div className='contact-name-sub-wrap'>
-              <p className='contact-name-p'>First Name</p>
+              <label className='contact-name-p'>First Name</label>
+
               <input
-                name='firstname'
+                name='firstName'
                 id='first_name'
                 type='text'
                 className='contact-name-input'
                 placeholder='Enter your first name'
-                onChange={handleContactFirstName}
+                onChange={handleChange}
                 value={contactForm.firstName}
               />
+              {submitted && !contactForm.firstName ? (
+                <span className='contact-err-message'> Input first name</span>
+              ) : null}
             </div>
             <div className='contact-name-sub-wrap'>
-              <p className='contact-name-p'>Last Name</p>
+              <label className='contact-name-p'>Last Name</label>
+
               <input
+                name='lastName'
                 id='last_name'
                 type='text'
                 className='contact-name-input'
                 placeholder='Enter your last name'
-                onChange={handleContactLastName}
+                onChange={handleChange}
                 value={contactForm.lastName}
               />
+              {submitted && !contactForm.lastName ? (
+                <span className='contact-err-message'> Input last name</span>
+              ) : null}
             </div>
           </div>
           <div>
-            <p className='contact-name-p'>Email</p>
+            <label className='contact-name-p'>Email</label>
+
             <input
+              name='email'
               id='email'
               type='text'
               className='contact-name-input'
-              placeholder='Samueladeniyi@gmail.com'
-              onChange={handleContactEmail}
+              placeholder='yourname@email.com'
+              onChange={handleChange}
               value={contactForm.email}
             />
+            {submitted && !contactForm.email ? (
+              <span className='contact-err-message'> Input email</span>
+            ) : submitted && !contactForm.email.includes("@") ? (
+              <span className='contact-err-message'>
+                Input Valid Email Address
+              </span>
+            ) : null}
           </div>
           <div>
-            <p className='contact-name-p'>Message</p>
+            <label className='contact-name-p'>Message</label>
             <textarea
+              name='message'
               id='message'
               placeholder="Send me a message and I'll reply you as soon as possible..."
               className='contact-name-input-message'
-              onChange={handleContactMessage}
+              onChange={handleChange}
               value={contactForm.message}
             />
+            {submitted && !contactForm.message ? (
+              <span className='contact-err-message'>
+                Please enter a message
+              </span>
+            ) : null}
           </div>
           <div className='contact-agree-wrap'>
-            <input type='checkbox' style={{ margin: "0 10px" }} />
-            <span className='contact-span'>
+            <input
+              name='agreeCheck'
+              type='checkbox'
+              checked={contactForm.agreeCheck}
+              onChange={handleAgreeCheck}
+              style={{ margin: "0 10px" }}
+            />
+            <label className='contact-agree-span'>
               You agree to providing your data to {fullName} who may contact
               you.
-            </span>
+            </label>
+            <br />
+            {submitted && !contactForm.agreeCheck ? (
+              <span className='contact-err-message'>
+                Please click on checkbox
+              </span>
+            ) : null}
           </div>
           <button
             id='btn__submit'
