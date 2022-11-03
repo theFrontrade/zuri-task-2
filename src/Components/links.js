@@ -16,19 +16,11 @@ const Links = () => {
           {item.name}
         </a>
       ))}
-      <Link className='link-tag' to='/contact'>
-        {" "}
-        <a
-          href="/contact"
-          className='link-button'
-          target='_self'
-          rel='nonreferrer'
-          id='contact'
+        <a 
+          id='contact' 
         >
-          {" "}
-          Contact
+          <Link className="link-button" to='/contact'> Contacts</Link>
         </a>
-      </Link>
       <div className='link-img-wrap'>
         <a
           href='https://github.com/thefrontrade'

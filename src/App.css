@@ -91,6 +91,7 @@ body {
 }
 .link-tag{
   text-decoration: none;
+  color: black;
 }
 .link-button:hover {
   background-color: #d0d5dd;
