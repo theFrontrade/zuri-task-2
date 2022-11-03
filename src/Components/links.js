@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 const Links = () => {
   return (
     <div>
@@ -15,6 +16,19 @@ const Links = () => {
           {item.name}
         </a>
       ))}
+      <Link className='link-tag' to='/contact'>
+        {" "}
+        <a
+          href="/contact"
+          className='link-button'
+          target='_self'
+          rel='nonreferrer'
+          id='contact'
+        >
+          {" "}
+          Contact
+        </a>
+      </Link>
       <div className='link-img-wrap'>
         <a
           href='https://github.com/thefrontrade'
@@ -39,50 +53,43 @@ export default Links;
 export const linkList = [
   {
     key: 1,
-    id: 'twitter__link',
-    target : '_blank',
-    name: 'Twitter link',
-    link: 'https://twitter.com/theFrontrade',
+    id: "twitter__link",
+    target: "_blank",
+    name: "Twitter link",
+    link: "https://twitter.com/theFrontrade",
   },
   {
     key: 2,
-    id: 'btn__zuri',
-    target : '_blank',
-    name: 'Zuri Team',
-    link: 'https://training.zuri.team/',
+    id: "btn__zuri",
+    target: "_blank",
+    name: "Zuri Team",
+    link: "https://training.zuri.team/",
   },
   {
     key: 3,
-    id: 'books',
-    target : '_blank',
-    name: 'Zuri Books',
-    link: 'https://books.zuri.team/',
+    id: "books",
+    target: "_blank",
+    name: "Zuri Books",
+    link: "https://books.zuri.team/",
   },
   {
     key: 4,
-    id: 'books__python',
-    target : '_blank',
-    name: 'Python Books',
-    link: 'https://books.zuri.team/python-for-beginners?ref_id=thefrontrade',
+    id: "books__python",
+    target: "_blank",
+    name: "Python Books",
+    link: "https://books.zuri.team/python-for-beginners?ref_id=thefrontrade",
   },
   {
     key: 5,
-    id: 'pitch',
-    name: 'Background Checks for Codes',
-    link: 'https://background.zuri.team/',
+    id: "pitch",
+    name: "Background Checks for Codes",
+    link: "https://background.zuri.team/",
   },
   {
     key: 6,
-    id: 'books__design',
-    target : '_blank',
-    name: 'Design Books',
-    link: 'https://books.zuri.team/design-rules',
+    id: "books__design",
+    target: "_blank",
+    name: "Design Books",
+    link: "https://books.zuri.team/design-rules",
   },
-  {
-    key : 7,
-    id : 'contact',
-    target : '_self',
-    name: 'contact',
-    link : '/contact'
-  }
 ];

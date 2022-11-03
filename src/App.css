@@ -89,6 +89,9 @@ body {
   cursor: pointer;
   text-align: center;
 }
+.link-tag{
+  text-decoration: none;
+}
 .link-button:hover {
   background-color: #d0d5dd;
 }
