@@ -1,0 +1,221 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter&display=swap');
+/* main style */
+body {
+  background-color: #f4f5f7;
+  font-family: 'Inter', sans-serif;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 28px;
+}
+.main-wrap {
+  width: 80%;
+  padding: 0 10%;
+}
+/* profile-wrap */
+.profile-wrap {
+  width: 100%;
+  height: 45vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 10px 0 0 0 ;
+}
+.profileImg-wrap {
+  width: 150px;
+  height: 150px;
+  border-radius: 100px;
+  position: relative;
+  top: 0;
+  left: 0;
+}
+.profile-share-wrap {
+    align-self: flex-end;
+    margin-right: 100px;
+    cursor: pointer;
+  }
+  .profile-share-wrap:hover .share-hover {
+    display: inline;
+  }
+
+
+.share-hover {
+  display: none;
+}
+.profileImg-wrap:hover {
+  background-color: #6670856e;
+}
+.profile-icon {
+  width: 30px;
+  z-index: 1000;
+  position: absolute;
+  top: 70%;
+  left: 50%;
+  transform: translate(-50%, -30%);
+  display: none;
+}
+.profileImg-wrap:hover .profile-icon {
+  display: block;
+}
+#profile__img {
+  width: 150px;
+  object-fit: cover;
+  border-radius: 100px;
+  position: absolute;
+  z-index: -1;
+  top: 0;
+  left: 0;
+}
+.mobileMore {
+  display: none;
+}
+.profile-wrap p {
+    font-size: 1.2rem;
+    font-weight: 700;
+  }
+/* link section */
+.link-button {
+  width: 100%;
+  background-color: #eaecf0;
+  border: none;
+  padding: 20px 0;
+  display: block;
+  margin: 25px 0;
+  text-decoration: none;
+  color: black;
+  font-size: 1rem;
+  border-radius: 10px;
+  cursor: pointer;
+  text-align: center;
+}
+.link-button:hover {
+  background-color: #d0d5dd;
+}
+.link-img-wrap {
+  width: 100%;
+  text-align: center;
+  padding: 40px 0;
+}
+.link-img-wrap img {
+  padding: 0 15px;
+}
+/* footer section */
+.footer-wrap {
+  width: 90%;
+  padding: 20px 5%;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  border-top: 1px solid #00000056
+}
+.footer-wrap img {
+  width: 150px;
+}
+.footer-wrap span {
+  font-size: 1.1rem;
+  color: #667085;
+}
+@media only screen and (max-width: 800px) {
+  .main-wrap {
+    width: 90%;
+    padding: 0 5%;
+  }
+  .profile-share-wrap {
+    padding: 0;
+    margin: 0;
+  }
+  .profile-share-wrap:hover .share-hover {
+    display: none;
+  }
+  .shareIcon {
+    display: none;
+  }
+  .mobileMore {
+    display: inline;
+  }
+  .share-hover {
+    display: none;
+  }
+  .footer-wrap {
+    flex-direction: column;
+  }
+  .footer-wrap span {
+    padding: 20px 0;
+  }
+}
+
+/* contacts  */
+ .contact-wrap{
+   width: 53%;
+   padding: 5% 23.5%;
+ }
+ .contact-span{
+   font-size: 19px;
+   font-weight: 200;
+   color: #475467;
+   line-height: 50px;
+ }
+ .contact-form{
+   width: 100%;
+   display: flex;
+   flex-direction: column;
+ }
+ .contact-name-wrap{
+   display: flex;
+   justify-content: space-between;
+   flex-wrap: wrap;
+ }
+ .contact-name-sub-wrap{
+   width: 45%;
+ }
+ .contact-name-p{
+   color: #344054;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 20px;
+ }
+ .contact-name-input{
+   width: 95%;
+   height: 40px;
+   padding: 2px 2.5%;
+   border: 1px solid #D0D5DD;
+   border-radius: 8px;
+   box-shadow: 0px 1px 2px rgba(16, 24, 40, 0.05);
+   border-radius: 8px;
+   outline: none;
+   font-size: 1rem;
+ }
+  .contact-name-input-message{
+   width: 97%;
+   height: 100px;
+   padding: 16px 1.5%;
+   border: 1px solid #D0D5DD;
+   border-radius: 8px;
+   box-shadow: 0px 1px 2px rgba(16, 24, 40, 0.05);
+   border-radius: 8px;
+   outline: none;
+   resize: none;
+   font-size: 1.1rem;
+   font-weight: 400;
+   font-family: 'Inter', sans-serif;
+ }
+ .contact-agree-wrap{
+   padding: 20px 0;
+ }
+ .send-message-button{
+   width: 100%;
+   height: 48px;
+   background-color: #1570EF;
+   border : none;
+   font-size: 1.2rem;
+   font-weight: 400;
+   color: #d0d5dd;
+   box-shadow: 0px 1px 2px rgba(16, 24, 40, 0.05);
+   border-radius: 8px;
+   margin: 20px 0;
+   font-family: 'Inter', sans-serif;
+ }
+ .send-message-button:hover{
+   opacity: .6;
+ }
