@@ -35,12 +35,12 @@ const Contacts = () => {
       contactForm.message &&
       contactForm.agreeCheck
     ) {
-      setValidated(true)
-      alert('Message Sent')
+      setValidated(true);
+      alert("Message Sent");
     }
   };
-  if(validated){
-    window.location.reload()
+  if (validated) {
+    window.location.reload();
   }
   const fullName = "Samuel Adeniyi";
   return (
@@ -50,7 +50,7 @@ const Contacts = () => {
         <span className='contact-span'>
           Hi there, contact me to ask me about anything you have in mind.
         </span>
-        <form className='contact-form' method="post">
+        <form className='contact-form' method='post'>
           <div className='contact-name-wrap'>
             <div className='contact-name-sub-wrap'>
               <label className='contact-name-p'>First Name</label>
@@ -87,11 +87,10 @@ const Contacts = () => {
           </div>
           <div>
             <label className='contact-name-p'>Email</label>
-
             <input
               name='email'
               id='email'
-              type='text'
+              type='email'
               className='contact-name-input'
               placeholder='yourname@email.com'
               onChange={handleChange}
