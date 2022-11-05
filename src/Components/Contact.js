@@ -42,6 +42,11 @@ const Contacts = () => {
   if (validated) {
     window.location.reload();
   }
+  const errorStyles = {
+    border: "1px solid #F89687",
+    boxShadow : "0px 1px 2px rgba(16, 24, 40, 0.05), 0px 0px 0px 4px #FFD3CC"
+  }
+  
   const fullName = "Samuel Adeniyi";
   return (
     <div>
@@ -59,6 +64,7 @@ const Contacts = () => {
                 name='firstName'
                 id='first_name'
                 type='text'
+                style={ submitted && !contactForm.firstName ? errorStyles : null}
                 className='contact-name-input'
                 placeholder='Enter your first name'
                 onChange={handleChange}
@@ -75,6 +81,7 @@ const Contacts = () => {
                 name='lastName'
                 id='last_name'
                 type='text'
+                style={ submitted && !contactForm.lastName ? errorStyles : null}
                 className='contact-name-input'
                 placeholder='Enter your last name'
                 onChange={handleChange}
@@ -91,6 +98,7 @@ const Contacts = () => {
               name='email'
               id='email'
               type='email'
+              style={ submitted && !contactForm.email ? errorStyles : submitted && !contactForm.email.includes("@")  ? errorStyles : null}
               className='contact-name-input'
               placeholder='yourname@email.com'
               onChange={handleChange}
@@ -109,6 +117,7 @@ const Contacts = () => {
             <textarea
               name='message'
               id='message'
+              style={ submitted && !contactForm.message ? errorStyles : null}
               placeholder="Send me a message and I'll reply you as soon as possible..."
               className='contact-name-input-message'
               onChange={handleChange}
@@ -128,7 +137,7 @@ const Contacts = () => {
               onChange={handleAgreeCheck}
               style={{ margin: "0 10px" }}
             />
-            <label className='contact-agree-span'>
+            <label className='contact-agree-span' >
               You agree to providing your data to {fullName} who may contact
               you.
             </label>

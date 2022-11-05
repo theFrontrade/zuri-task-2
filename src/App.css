@@ -107,7 +107,8 @@ body {
 /* footer section */
 .footer-wrap {
   width: 90%;
-  padding: 20px 5%;
+  margin: 0 5%;
+  padding: 20px 0;
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
