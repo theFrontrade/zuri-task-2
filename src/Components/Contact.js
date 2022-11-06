@@ -58,7 +58,7 @@ const Contacts = () => {
         <form className='contact-form' method='post'>
           <div className='contact-name-wrap'>
             <div className='contact-name-sub-wrap'>
-              <label className='contact-name-p'>First Name</label>
+              <label for='first_name' className='contact-name-p'>First Name</label>
 
               <input
                 name='firstName'
@@ -75,7 +75,7 @@ const Contacts = () => {
               ) : null}
             </div>
             <div className='contact-name-sub-wrap'>
-              <label className='contact-name-p'>Last Name</label>
+              <label for='last_name' className='contact-name-p'>Last Name</label>
 
               <input
                 name='lastName'
@@ -93,7 +93,7 @@ const Contacts = () => {
             </div>
           </div>
           <div>
-            <label className='contact-name-p'>Email</label>
+            <label for='email' className='contact-name-p'>Email</label>
             <input
               name='email'
               id='email'
@@ -113,7 +113,7 @@ const Contacts = () => {
             ) : null}
           </div>
           <div>
-            <label className='contact-name-p'>Message</label>
+            <label for='message' className='contact-name-p'>Message</label>
             <textarea
               name='message'
               id='message'
